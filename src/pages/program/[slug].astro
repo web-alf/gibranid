@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE } from '../../data/site';
+
+export async function getStaticPaths() {
+  const programs = await getCollection('programs');
+  return programs.map(program => ({
+    params: { slug: program.data.slug },
+    props: { program },
+  }));
+}
+
+const { program } = Astro.props;
+const { Content } = await render(program);
+---
+<PageLayout
+  title={program.data.seo.title}
+  description={program.data.seo.description}
+>
+  <div style="max-width: 1440px; margin: 0 auto; padding: 60px 32px;">
+    <div style="margin-bottom: 32px;">
+      <a href="/#program" style="font-family: var(--font-mono,'Geist Mono',monospace); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted); text-decoration: none;">← Kembali ke Program</a>
+    </div>
+
+    <div class="section-eyebrow">{program.data.tag}</div>
+    <h1 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 300; font-size: clamp(40px,5vw,72px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 24px; max-width: 900px;">
+      {program.data.title}
+    </h1>
+    <p style="font-size: 18px; line-height: 1.6; color: var(--color-muted); max-width: 640px; margin-bottom: 48px;">
+      {program.data.description}
+    </p>
+
+    <div style="max-width: 720px; font-size: 16px; line-height: 1.7; color: var(--color-muted);">
+      <Content />
+    </div>
+
+    {program.data.citations.length > 0 && (
+      <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--color-line);">
+        <div class="section-eyebrow" style="margin-bottom: 16px;">Sumber</div>
+        <ul style="list-style: none;">
+          {program.data.citations.map((c, i) => (
+            <li style="font-size: 13px; color: var(--color-muted); margin-bottom: 8px;">
+              [{i + 1}] <a href={c.url} rel="noopener noreferrer" target="_blank" style="color: var(--color-merah);">{c.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div style="margin-top: 48px; padding: 16px 20px; background: rgba(184,35,27,0.05); border: 1px solid rgba(184,35,27,0.15); border-radius: 4px; font-size: 12px; color: var(--color-muted);">
+      Situs ini merupakan ruang informasi pendamping. Untuk informasi resmi, kunjungi <a href={SITE.officialVPUrl} style="color: var(--color-merah);">wapresri.go.id</a>.
+    </div>
+  </div>
+</PageLayout>

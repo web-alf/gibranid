@@ -1,0 +1,47 @@
+---
+const initiatives = [
+  'Magang & internship Sekretariat Wakil Presiden untuk mahasiswa berprestasi',
+  'Hackathon AI & robotika untuk pelajar pesantren dan sekolah umum',
+  'Forum dialog Wapres–Gen Z di kampus-kampus seluruh Indonesia',
+  'Pendampingan UMKM muda & startup ekraf',
+  'Beasiswa Indonesia Pintar dan akses pendidikan vokasi',
+];
+---
+<section class="youth" id="anakmuda">
+  <div class="youth-inner">
+    <div>
+      <div class="section-eyebrow">Untuk Generasi Penerus</div>
+      <h2>
+        Masa depan Indonesia <span class="italic">milik anak muda.</span>
+      </h2>
+      <p>
+        Sebagai Wapres termuda dalam sejarah Republik, Mas Gibran membuka pintu seluas-luasnya bagi generasi muda untuk ambil bagian membangun bangsa. Ini bukan jargon — ini undangan kerja nyata.
+      </p>
+
+      <ol class="youth-list">
+        {initiatives.map(item => <li>{item}</li>)}
+      </ol>
+
+      <a href="#" class="btn-primary" style="background: var(--color-gold-soft); color: var(--color-ink);">
+        Daftar & Ikut Berkarya →
+      </a>
+    </div>
+
+    <div class="batik-frame">
+      <div class="batik-frame-corner batik-frame-corner-tl" aria-hidden="true"></div>
+      <div class="batik-frame-corner batik-frame-corner-tr" aria-hidden="true"></div>
+      <div class="batik-frame-corner batik-frame-corner-bl" aria-hidden="true"></div>
+      <div class="batik-frame-corner batik-frame-corner-br" aria-hidden="true"></div>
+      <div
+        class="youth-visual"
+        style="background-image: url('/images/portrait-official.jpg')"
+        role="img"
+        aria-label="Foto Gibran Rakabuming Raka"
+      >
+        <div class="youth-quote">
+          Saya tidak ingin anak muda Indonesia hanya jadi penonton. Mereka harus jadi pemain utama dalam pertandingan masa depan.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

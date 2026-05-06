@@ -1,0 +1,36 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../data/site';
+---
+<PageLayout
+  title="Disclaimer — gibran.id"
+  description="Informasi tentang status, sumber konten, dan keterbatasan situs gibran.id."
+>
+  <div style="max-width: 720px; margin: 0 auto; padding: 60px 32px;">
+    <div class="section-eyebrow">Status Situs</div>
+    <h1 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 300; font-size: clamp(40px,5vw,72px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 32px;">
+      Disclaimer
+    </h1>
+
+    <div style="font-size: 16px; line-height: 1.7; color: var(--color-muted);">
+      <p style="margin-bottom: 24px;"><strong style="color: var(--color-ink);">gibran.id adalah situs informasi pendamping yang tidak resmi (unofficial).</strong> Situs ini tidak berafiliasi, tidak diotorisasi, dan tidak mewakili Sekretariat Wakil Presiden Republik Indonesia maupun instansi pemerintah mana pun.</p>
+
+      <h2 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 500; font-size: 24px; margin: 32px 0 16px; color: var(--color-ink);">Sumber Konten</h2>
+      <p style="margin-bottom: 16px;">Seluruh konten berbasis informasi yang sudah dipublikasikan secara publik:</p>
+      <ul style="list-style: disc; padding-left: 24px; margin-bottom: 24px;">
+        <li style="margin-bottom: 8px;"><a href="https://www.kpu.go.id" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">KPU.go.id</a> — Data Pilpres 2024</li>
+        <li style="margin-bottom: 8px;"><a href="https://id.wikipedia.org/wiki/Gibran_Rakabuming_Raka" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">Wikipedia Indonesia</a> — Profil biografi</li>
+        <li style="margin-bottom: 8px;"><a href="https://wapresri.go.id" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">wapresri.go.id</a> — Rilis pers resmi Sekretariat Wapres</li>
+        <li style="margin-bottom: 8px;"><a href="https://lapormaswapres.id" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">lapormaswapres.id</a> — Program Lapor Mas Wapres</li>
+        <li style="margin-bottom: 8px;">Wikimedia Commons — Foto resmi (lisensi CC)</li>
+        <li style="margin-bottom: 8px;">Media massa kredibel (Kompas, Tempo, Antara)</li>
+      </ul>
+
+      <h2 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 500; font-size: 24px; margin: 32px 0 16px; color: var(--color-ink);">Informasi Resmi</h2>
+      <p style="margin-bottom: 24px;">Untuk informasi resmi kenegaraan, rilis pers, dan komunikasi resmi Sekretariat Wakil Presiden, kunjungi: <a href={SITE.officialVPUrl} style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">wapresri.go.id</a></p>
+
+      <h2 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 500; font-size: 24px; margin: 32px 0 16px; color: var(--color-ink);">Batasan</h2>
+      <p>Situs ini tidak bertujuan untuk kampanye politik, penggalangan dana, atau mewakili figur yang bersangkutan. Konten adalah upaya terbaik berdasarkan sumber publik pada waktu akses. Seluruh konten bersifat informasional.</p>
+    </div>
+  </div>
+</PageLayout>

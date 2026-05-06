@@ -1,0 +1,51 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { personSchema } from '../data/schemas/person';
+---
+<PageLayout
+  title="Tentang Gibran Rakabuming Raka — gibran.id"
+  description="Profil lengkap Wakil Presiden Republik Indonesia Gibran Rakabuming Raka."
+  schemas={[personSchema]}
+>
+  <div style="max-width: 1440px; margin: 0 auto; padding: 60px 32px;">
+    <div class="section-eyebrow">Profil</div>
+    <h1 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 300; font-size: clamp(40px,5vw,72px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 32px; max-width: 900px;">
+      Gibran Rakabuming <span style="font-family: var(--font-display,'Instrument Serif',serif); font-style: italic; color: var(--color-merah);">Raka</span>
+    </h1>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+      <div>
+        <div
+          style="aspect-ratio: 4/5; background-size: cover; background-position: center; border-radius: 4px; background-image: url('/images/portrait-official.jpg'); filter: contrast(1.05) saturate(0.9);"
+          role="img"
+          aria-label="Foto resmi Wakil Presiden Gibran Rakabuming Raka, sumber: Wikimedia Commons"
+        ></div>
+        <p style="font-size: 11px; color: var(--color-muted); margin-top: 8px; font-family: var(--font-mono,'Geist Mono',monospace);">Foto: Wikimedia Commons (CC)</p>
+      </div>
+      <div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+          <tbody>
+            {[
+              ['Nama', 'Gibran Rakabuming Raka'],
+              ['Lahir', '1 Oktober 1987, Surakarta'],
+              ['Jabatan', 'Wakil Presiden RI ke-14'],
+              ['Periode', '2024–2029'],
+              ['Dilantik', '20 Oktober 2024'],
+              ['Sebelumnya', 'Wali Kota Surakarta (2021–2024)'],
+              ['Mendampingi', 'Presiden Prabowo Subianto'],
+            ].map(([key, val]) => (
+              <tr style="border-bottom: 1px solid var(--color-line);">
+                <td style="padding: 12px 0; color: var(--color-muted); width: 40%; font-family: var(--font-mono,'Geist Mono',monospace); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">{key}</td>
+                <td style="padding: 12px 0; font-weight: 500;">{val}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div style="margin-top: 32px; padding: 16px 20px; background: rgba(184,35,27,0.05); border: 1px solid rgba(184,35,27,0.15); border-radius: 4px; font-size: 12px; color: var(--color-muted);">
+          Sumber: <a href="https://id.wikipedia.org/wiki/Gibran_Rakabuming_Raka" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">Wikipedia</a> · <a href="https://wapresri.go.id" style="color: var(--color-merah);" rel="noopener noreferrer" target="_blank">wapresri.go.id</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

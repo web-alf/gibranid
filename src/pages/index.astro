@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Marquee from '../components/sections/Marquee.astro';
+import About from '../components/sections/About.astro';
+import Programs from '../components/sections/Programs.astro';
+import Lapor from '../components/sections/Lapor.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import Diplomacy from '../components/sections/Diplomacy.astro';
+import Youth from '../components/sections/Youth.astro';
+import Newsroom from '../components/sections/Newsroom.astro';
+import Visi from '../components/sections/Visi.astro';
+import { personSchema } from '../data/schemas/person';
+---
+<BaseLayout
+  title="gibran.id — Wakil Presiden Republik Indonesia (Unofficial)"
+  description="Ruang informasi pendamping tentang Wakil Presiden Gibran Rakabuming Raka, programnya, dan saluran aspirasi resmi."
+  schemas={[personSchema]}
+>
+  <Hero />
+  <Marquee />
+  <About />
+  <Programs />
+  <Lapor />
+  <Timeline />
+  <Diplomacy />
+  <Youth />
+  <Newsroom />
+  <Visi />
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+const items = [
+  {
+    year: 1987,
+    title: 'Lahir di Surakarta',
+    desc: 'Lahir 1 Oktober 1987 sebagai putra sulung dari H. Joko Widodo dan Hj. Iriana. Tumbuh dalam keluarga sederhana yang menjunjung tinggi nilai kerja keras dan kerendahan hati.',
+  },
+  {
+    year: 2010,
+    title: 'Memulai Bisnis Kuliner',
+    desc: 'Mendirikan Chilli Pari Catering, lalu Markobar dan Sang Pisang. Membangun lebih dari 50 cabang dan menyerap ratusan tenaga kerja muda.',
+  },
+  {
+    year: 2021,
+    title: 'Wali Kota Surakarta',
+    desc: 'Dilantik menjadi Wali Kota Solo ke-18. Dinobatkan sebagai Wali Kota paling populer di Indonesia berdasarkan Indonesia Indicator. Mempercepat pembangunan infrastruktur dan UMKM lokal.',
+  },
+  {
+    year: 2024,
+    title: 'Wakil Presiden ke-14 Republik Indonesia',
+    desc: 'Dilantik 20 Oktober 2024 di Gedung Nusantara MPR RI. Memenangkan Pilpres bersama Presiden Prabowo Subianto dengan 96,2 juta suara — kemenangan satu putaran terbesar dalam sejarah Pilpres langsung Indonesia.',
+  },
+  {
+    year: 2025,
+    title: 'G20 Johannesburg & Diplomasi Internasional',
+    desc: 'Mewakili Indonesia di KTT G20 Afrika Selatan. Mempromosikan program MBG dan QRIS sebagai inovasi Indonesia kepada dunia. Memimpin Indonesia–Africa CEO Forum 2025.',
+  },
+  {
+    year: 2026,
+    title: 'Relokasi ke Ibu Kota Nusantara',
+    desc: 'Wakil Presiden bersama keluarga dan Sekretariat memulai relokasi resmi ke Istana Wakil Presiden di Nusantara — simbol komitmen pemerataan pembangunan dan masa depan Indonesia di luar Jawa.',
+  },
+];
+---
+<section>
+  <div class="section-eyebrow">Perjalanan Pengabdian</div>
+  <h2 class="section-title">
+    Dari Solo, untuk <span class="italic">Indonesia.</span>
+  </h2>
+  <p class="section-lead">
+    Setiap langkah adalah pelajaran. Setiap pengalaman adalah modal untuk melayani lebih baik.
+  </p>
+
+  <div class="timeline">
+    {items.map(item => (
+      <div class="timeline-item">
+        <div class="timeline-year">{item.year}</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">{item.title}</h3>
+          <p class="timeline-desc">{item.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

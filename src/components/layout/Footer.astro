@@ -1,0 +1,62 @@
+---
+import { SITE } from '../../data/site';
+---
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/images/logo-horizontal.png" alt="gibran.id" class="footer-brand-logo" />
+        </div>
+        <p class="footer-tagline">
+          Ruang digital untuk mengenal lebih dekat sosok Wakil Presiden Republik Indonesia, program-programnya, dan saluran aspirasi langsung untuk rakyat.
+        </p>
+        <div class="footer-disclaimer">
+          <strong>Disclaimer.</strong> Situs ini merupakan ruang informasi pendamping. Untuk informasi resmi kenegaraan dan rilis pers Sekretariat Wakil Presiden, kunjungi <a href={SITE.officialVPUrl} style="color:var(--color-gold-soft);">wapresri.go.id</a>.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Navigasi</div>
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#lapor">Lapor Mas Wapres</a></li>
+          <li><a href="#anakmuda">Anak Muda</a></li>
+          <li><a href="#berita">Berita</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Program</div>
+        <ul>
+          <li><a href="/program/mbg">Makan Bergizi Gratis</a></li>
+          <li><a href="/program/sekolah-rakyat">Sekolah Rakyat</a></li>
+          <li><a href="/program/ckg">Cek Kesehatan Gratis</a></li>
+          <li><a href="/program/pandai">PANDAI</a></li>
+          <li><a href="#program">Asta Cita</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Hubungi</div>
+        <ul>
+          <li><a href={`https://wa.me/${SITE.whatsappLapor}`}>WhatsApp Lapor</a></li>
+          <li><a href={SITE.laporUrl}>Portal Aspirasi</a></li>
+          <li><a href={SITE.officialVPUrl}>Situs Resmi Wapres</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 GIBRAN.ID — DIBANGUN UNTUK INDONESIA</div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="Instagram">IG</a>
+        <a href="#" class="footer-social" aria-label="X / Twitter">X</a>
+        <a href="#" class="footer-social" aria-label="YouTube">YT</a>
+        <a href="#" class="footer-social" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+  </div>
+</footer>

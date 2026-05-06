@@ -1,0 +1,16 @@
+---
+const items = [
+  'Asta Cita',
+  'Indonesia Emas 2045',
+  'Makan Bergizi Gratis',
+  'Sekolah Rakyat',
+  'Lapor Mas Wapres',
+  'Generasi Maju',
+];
+const doubled = [...items, ...items];
+---
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {doubled.map(item => <span>{item}</span>)}
+  </div>
+</div>

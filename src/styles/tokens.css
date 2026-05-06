@@ -1,0 +1,28 @@
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #f5f1ea;
+  --color-paper-warm: #ebe5d9;
+  --color-merah: #b8231b;
+  --color-merah-deep: #8a1812;
+  --color-gold: #b89968;
+  --color-gold-soft: #d4b87a;
+  --color-line: rgba(10,10,10,0.12);
+  --color-muted: rgba(10,10,10,0.6);
+
+  --shadow-portrait: 0 30px 80px rgba(0,0,0,0.20);
+  --shadow-program: 0 30px 60px rgba(0,0,0,0.08);
+  --shadow-news: 0 20px 40px rgba(0,0,0,0.08);
+  --shadow-dip: 0 20px 40px rgba(0,0,0,0.06);
+  --shadow-btn-primary: 0 12px 30px rgba(184,35,27,0.25);
+
+  /* Page-level horizontal padding — background tetap full, content inset dari edge */
+  --page-gutter: 64px;
+}
+
+@media (max-width: 1024px) {
+  :root { --page-gutter: 40px; }
+}
+
+@media (max-width: 640px) {
+  :root { --page-gutter: 20px; }
+}

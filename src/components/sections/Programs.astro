@@ -1,0 +1,95 @@
+---
+const programs = [
+  {
+    slug: 'mbg',
+    title: 'Makan Bergizi Gratis',
+    titleShort: 'MBG',
+    tag: 'Asta Cita 4',
+    symbol: 'M',
+    gradient: 'pc-mbg',
+    image: '/images/program-mbg.jpg',
+    description: 'Investasi gizi untuk generasi penerus. Memastikan anak Indonesia tumbuh sehat, cerdas, dan siap memimpin masa depan.',
+  },
+  {
+    slug: 'sekolah-rakyat',
+    title: 'Sekolah Rakyat',
+    titleShort: 'Sekolah Rakyat',
+    tag: 'Asta Cita 4',
+    symbol: 'S',
+    gradient: 'pc-sekolah',
+    image: '/images/program-sekolah.jpg',
+    description: 'Pendidikan berkualitas tanpa biaya untuk anak-anak dari keluarga kurang mampu. Memutus rantai kemiskinan melalui ilmu.',
+  },
+  {
+    slug: 'ckg',
+    title: 'Cek Kesehatan Gratis',
+    titleShort: 'CKG',
+    tag: 'Asta Cita 4',
+    symbol: 'C',
+    gradient: 'pc-ckg',
+    image: '/images/program-ckg.jpg',
+    description: 'Deteksi dini, hidup lebih panjang. Program skrining kesehatan menyeluruh untuk seluruh warga negara Indonesia.',
+  },
+  {
+    slug: 'pandai',
+    title: 'PANDAI — Program Digital AI',
+    titleShort: 'PANDAI',
+    tag: 'Asta Cita 6',
+    symbol: 'AI',
+    gradient: 'pc-pandai',
+    image: '/images/program-pandai.jpg',
+    description: 'Membawa AI dan robotika ke pesantren dan sekolah. Indonesia harus jadi pencipta teknologi, bukan sekadar pengguna.',
+  },
+  {
+    slug: 'ekraf',
+    title: 'Ekonomi Kreatif',
+    titleShort: 'Ekraf',
+    tag: 'Asta Cita 3',
+    symbol: 'E',
+    gradient: 'pc-ekraf',
+    image: '/images/program-ekraf.jpg',
+    description: 'UMKM, ekraf, dan industri digital sebagai mesin baru ekonomi. Anak muda Indonesia berdaya, berkarya, dan mendunia.',
+  },
+  {
+    slug: 'lapor',
+    title: 'Lapor Mas Wapres',
+    titleShort: 'Lapor Sekarang',
+    tag: 'Direct Channel',
+    symbol: 'L',
+    gradient: 'pc-lapor',
+    image: '/images/program-lapor.jpg',
+    description: 'Saluran langsung rakyat ke Wakil Presiden. Setiap suara didengar, setiap aduan ditindaklanjuti — tanpa perantara.',
+    href: '#lapor',
+  },
+];
+---
+<section id="program">
+  <div class="section-eyebrow">Program Unggulan</div>
+  <h2 class="section-title">
+    Kebijakan yang <span class="italic">menyentuh</span> kehidupan rakyat.
+  </h2>
+  <p class="section-lead">
+    Delapan misi Asta Cita diterjemahkan menjadi program nyata yang dapat dirasakan dari Sabang sampai Merauke. Berikut prioritas yang dikawal langsung oleh Mas Wapres.
+  </p>
+
+  <div class="programs-grid">
+    {programs.map(program => (
+      <div class="program-card">
+        <div
+          class={`program-card-img ${program.gradient}`}
+          style={`background-image: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25)), url('${program.image}'); background-size: cover; background-position: center;`}
+        >
+          <div class="program-card-tag">{program.tag}</div>
+          <div class="pc-symbol" aria-hidden="true">{program.symbol}</div>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">{program.title}</h3>
+          <p class="program-card-desc">{program.description}</p>
+          <a href={program.href ?? `/program/${program.slug}`} class="program-card-link">
+            Pelajari {program.titleShort} →
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

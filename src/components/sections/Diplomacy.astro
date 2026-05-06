@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+const items = await getCollection('diplomacy');
+const sorted = items.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<section class="diplomacy">
+  <div class="diplomacy-inner">
+    <div class="section-eyebrow">Indonesia di Mata Dunia</div>
+    <h2 class="section-title">
+      Diplomasi yang <span class="italic">membanggakan.</span>
+    </h2>
+    <p class="section-lead">
+      Membawa nama Indonesia ke panggung dunia — bukan sekadar hadir, tapi memimpin percakapan.
+    </p>
+
+    <div class="diplomacy-grid">
+      {sorted.map(item => (
+        <div class="dip-card">
+          <span class="dip-flag" aria-hidden="true">{item.data.flag}</span>
+          <div class="dip-event">{item.data.event}</div>
+          <div class="dip-loc">{item.data.location}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

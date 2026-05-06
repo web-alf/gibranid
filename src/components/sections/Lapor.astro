@@ -1,0 +1,58 @@
+---
+import { SITE } from '../../data/site';
+---
+<section class="lapor" id="lapor">
+  <div class="lapor-inner">
+    <div>
+      <div class="section-eyebrow">Saluran Aspirasi Rakyat</div>
+      <h2>
+        Suara Anda, <span class="italic">prioritas kami.</span>
+      </h2>
+      <p>
+        Lapor Mas Wapres adalah inisiatif langsung Wakil Presiden untuk mendengar aspirasi rakyat — dari pelosok desa sampai kota besar. Tidak ada birokrasi berlapis. Tidak ada perantara. Hanya Anda dan kerja yang akan kami wujudkan.
+      </p>
+
+      <div class="lapor-channels">
+        <a href={`https://wa.me/${SITE.whatsappLapor}`} class="lapor-channel" rel="noopener noreferrer" target="_blank">
+          <div class="lapor-channel-icon" aria-hidden="true">💬</div>
+          <div>
+            <div class="lapor-channel-title">WhatsApp Resmi</div>
+            <div class="lapor-channel-desc">+62 811-1704-2204 · 24 jam</div>
+          </div>
+          <span class="lapor-channel-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href={SITE.laporUrl} class="lapor-channel" rel="noopener noreferrer" target="_blank">
+          <div class="lapor-channel-icon" aria-hidden="true">📋</div>
+          <div>
+            <div class="lapor-channel-title">Portal Lapor Mas Wapres</div>
+            <div class="lapor-channel-desc">lapormaswapres.id · Form digital terverifikasi</div>
+          </div>
+          <span class="lapor-channel-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href={SITE.sp4nUrl} class="lapor-channel" rel="noopener noreferrer" target="_blank">
+          <div class="lapor-channel-icon" aria-hidden="true">🏛️</div>
+          <div>
+            <div class="lapor-channel-title">SP4N-LAPOR Nasional</div>
+            <div class="lapor-channel-desc">Sistem pengaduan resmi pemerintah</div>
+          </div>
+          <span class="lapor-channel-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="lapor-stat-card">
+        <div class="lapor-stat-num">12,847</div>
+        <div class="lapor-stat-label">Aspirasi Diterima · Diperbarui Real-time</div>
+      </div>
+      <div class="lapor-stat-card">
+        <div class="lapor-stat-num">94<span style="font-size:32px">%</span></div>
+        <div class="lapor-stat-label">Tingkat Tindak Lanjut</div>
+      </div>
+      <div class="lapor-stat-card">
+        <div class="lapor-stat-num">38<span style="font-size:32px">prov</span></div>
+        <div class="lapor-stat-label">Provinsi Terjangkau</div>
+      </div>
+    </div>
+  </div>
+</section>

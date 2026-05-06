@@ -1,0 +1,32 @@
+[
+  {
+    "id": "votes-2024",
+    "label": "Suara Rakyat 2024",
+    "value": "96.2",
+    "unit": "jt",
+    "citationLabel": "KPU.go.id — Final Pilpres 2024",
+    "citationUrl": "https://www.kpu.go.id/",
+    "accessedAt": "2024-11-01",
+    "isVerified": true
+  },
+  {
+    "id": "win-percent",
+    "label": "Kemenangan Pilpres",
+    "value": "58.6",
+    "unit": "%",
+    "citationLabel": "KPU.go.id — Rekapitulasi Nasional",
+    "citationUrl": "https://www.kpu.go.id/",
+    "accessedAt": "2024-11-01",
+    "isVerified": true
+  },
+  {
+    "id": "vp-age",
+    "label": "Wapres Termuda RI",
+    "value": "37",
+    "unit": "",
+    "citationLabel": "Data publik — lahir 1 Okt 1987, dilantik 20 Okt 2024",
+    "citationUrl": "https://id.wikipedia.org/wiki/Gibran_Rakabuming_Raka",
+    "accessedAt": "2024-11-01",
+    "isVerified": true
+  }
+]

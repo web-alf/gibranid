@@ -1,0 +1,73 @@
+---
+const news = [
+  {
+    title: 'Kunker ke Aceh: Wapres Pastikan Pemulihan Pascabencana Tamiang Berjalan Optimal',
+    tag: 'Kunjungan Kerja',
+    meta: '30 Januari 2026 · 5 menit baca',
+    image: '/images/news-kabinet.jpg',
+    featured: true,
+  },
+  {
+    title: 'AI & Robotika untuk Transformasi Digital Pesantren',
+    tag: 'Pidato',
+    meta: '20 Januari 2026',
+    image: '/images/news-decorations.jpg',
+  },
+  {
+    title: 'Kawal Pelaksanaan MBG di SMA Negeri 1 Wamena, Papua',
+    tag: 'Program MBG',
+    meta: '14 Januari 2026',
+    image: '/images/news-pelantikan-wapres.jpg',
+  },
+  {
+    title: 'Pidato Lengkap di KTT G20 Sesi Kedua',
+    tag: 'Internasional',
+    meta: '22 November 2025',
+    image: '/images/news-g20.jpg',
+  },
+  {
+    title: 'Tinjau Sekolah Rakyat SMPN 18 Cirebon',
+    tag: 'Sekolah Rakyat',
+    meta: '24 Oktober 2025',
+    image: '/images/news-walikota.jpg',
+  },
+  {
+    title: 'Satu Tahun Lapor Mas Wapres: Mendengarkan, Mewujudkan',
+    tag: 'Refleksi',
+    meta: '27 November 2025',
+    image: '/images/news-prabowo-gibran.jpg',
+  },
+];
+const featured = news[0];
+const rest = news.slice(1);
+---
+<section id="berita">
+  <div class="section-eyebrow">Aktivitas Terkini</div>
+  <h2 class="section-title">
+    Catatan kerja <span class="italic">Mas Wapres.</span>
+  </h2>
+  <p class="section-lead">
+    Liputan langsung dari kunjungan kerja, pidato kunci, dan keputusan strategis.
+  </p>
+
+  <div class="news-grid">
+    <article class="news-card news-card-featured">
+      <div class="news-card-img" style={`background-image: url('${featured.image}'); background-size: cover; background-position: center;`}></div>
+      <div class="news-card-body">
+        <div class="news-card-tag">{featured.tag}</div>
+        <h3 class="news-card-title">{featured.title}</h3>
+        <div class="news-card-meta">{featured.meta}</div>
+      </div>
+    </article>
+    {rest.map(article => (
+      <article class="news-card">
+        <div class="news-card-img" style={`background-image: url('${article.image}'); background-size: cover; background-position: center;`}></div>
+        <div class="news-card-body">
+          <div class="news-card-tag">{article.tag}</div>
+          <h3 class="news-card-title">{article.title}</h3>
+          <div class="news-card-meta">{article.meta}</div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

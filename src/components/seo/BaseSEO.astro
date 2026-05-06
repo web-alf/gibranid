@@ -1,0 +1,40 @@
+---
+import { SITE } from '../../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  ogImage = SITE.ogImage,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SITE.url);
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="application-name" content={SITE.nameOfficial} />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large'} />
+<meta name="disclaimer" content="Unofficial public information site. For official Vice President releases, visit wapresri.go.id" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- OG -->
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content={SITE.nameOfficial} />
+{ogImage && <meta property="og:image" content={new URL(ogImage, SITE.url)} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={new URL(ogImage, SITE.url)} />}

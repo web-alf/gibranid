@@ -1,0 +1,14 @@
+---
+import { NAV_LINKS } from '../../data/navigation';
+---
+<nav class="nav">
+  <a href="/" class="nav-brand" aria-label="gibran.id — Beranda">
+    <img src="/images/GBRN.png" alt="gibran.id" class="nav-brand-logo" width="160" height="40" />
+  </a>
+  <ul class="nav-links">
+    {NAV_LINKS.map(link => (
+      <li><a href={link.href}>{link.label}</a></li>
+    ))}
+  </ul>
+  <a href="#lapor" class="nav-cta">Sampaikan Aspirasi</a>
+</nav>
