@@ -1,11 +1,245 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="404 — Halaman Tidak Ditemukan · gibran.id">
-  <div style="min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 32px;">
-    <div style="font-family: var(--font-serif,'Fraunces',serif); font-size: clamp(80px,20vw,200px); font-weight: 300; line-height: 1; letter-spacing: -0.05em; color: var(--color-line);">404</div>
-    <h1 style="font-family: var(--font-serif,'Fraunces',serif); font-weight: 300; font-size: clamp(28px,4vw,48px); letter-spacing: -0.03em; margin-bottom: 16px;">Halaman tidak ditemukan.</h1>
-    <p style="color: var(--color-muted); font-size: 18px; margin-bottom: 40px;">Halaman yang Anda cari tidak tersedia atau telah dipindahkan.</p>
-    <a href="/" class="btn-primary">Kembali ke Beranda →</a>
+<BaseLayout title="404 — Halaman Tidak Ditemukan · gibran.id" noindex={true}>
+  <div class="notfound">
+    <div class="notfound-stage" id="notfound-stage">
+      <svg class="notfound-mandala" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="nf-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(212,184,122,0.30)" />
+            <stop offset="55%" stop-color="rgba(212,184,122,0.10)" />
+            <stop offset="100%" stop-color="rgba(212,184,122,0)" />
+          </radialGradient>
+        </defs>
+        <circle cx="300" cy="300" r="290" fill="url(#nf-halo)" />
+        <g transform="translate(300 300)">
+          <g>
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(30)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(60)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(90)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(120)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(150)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(180)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(210)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(240)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(270)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(300)" />
+            <path fill="rgba(212,184,122,0.45)" d="M0,-270 L7,-200 L0,-180 L-7,-200 Z" transform="rotate(330)" />
+          </g>
+          <circle r="160" fill="none" stroke="rgba(184,153,104,0.30)" stroke-width="1" />
+          <circle r="240" fill="none" stroke="rgba(184,153,104,0.18)" stroke-width="0.7" stroke-dasharray="3 8" />
+        </g>
+      </svg>
+
+      <span class="nf-star nf-star-1" aria-hidden="true">✦</span>
+      <span class="nf-star nf-star-2" aria-hidden="true">✦</span>
+      <span class="nf-star nf-star-3" aria-hidden="true">✧</span>
+      <span class="nf-star nf-star-4" aria-hidden="true">✦</span>
+      <span class="nf-star nf-star-5" aria-hidden="true">·</span>
+
+      <div class="notfound-tilt" id="notfound-tilt">
+        <div class="notfound-number">404</div>
+      </div>
+    </div>
+
+    <div class="notfound-content">
+      <div class="notfound-eyebrow">Halaman Tidak Ditemukan</div>
+      <p class="notfound-desc">Halaman yang Anda cari tidak tersedia atau telah dipindahkan.</p>
+      <a href="/" class="btn-primary">Kembali ke Beranda →</a>
+    </div>
   </div>
 </BaseLayout>
+
+<style>
+  .notfound {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px var(--page-gutter) 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notfound-stage {
+    position: relative;
+    width: clamp(180px, 30vw, 320px);
+    height: clamp(180px, 30vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    perspective: 1200px;
+  }
+
+  .notfound-mandala {
+    position: absolute;
+    inset: -15%;
+    width: 130%;
+    height: 130%;
+    z-index: 0;
+    pointer-events: none;
+    animation: nf-mandala-rotate 90s linear infinite;
+    filter: drop-shadow(0 0 14px rgba(212, 184, 122, 0.2));
+    will-change: transform;
+  }
+
+  .notfound-tilt {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+  }
+
+  .notfound-number {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(72px, 15vw, 160px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--color-ink);
+    opacity: 0.08;
+    text-shadow:
+      0 0 80px rgba(184, 153, 104, 0.15),
+      0 4px 20px rgba(0, 0, 0, 0.06);
+    user-select: none;
+    transition: opacity 0.6s ease, text-shadow 0.6s ease;
+  }
+
+  .notfound-tilt:hover .notfound-number {
+    opacity: 0.12;
+    text-shadow:
+      0 0 100px rgba(184, 153, 104, 0.25),
+      0 8px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Stars */
+  .nf-star {
+    position: absolute;
+    font-family: 'Fraunces', serif;
+    color: var(--color-gold);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+    filter: drop-shadow(0 0 8px rgba(212, 184, 122, 0.6));
+    will-change: transform, opacity;
+    font-style: italic;
+  }
+
+  .nf-star-1 { top: 5%;  left: 8%;   font-size: 28px;                             animation: nf-twinkle 4.2s ease-in-out infinite; }
+  .nf-star-2 { top: 20%; right: 5%;  font-size: 20px;                             animation: nf-twinkle 5.5s ease-in-out infinite 0.7s; }
+  .nf-star-3 { top: 55%; left: 2%;   font-size: 24px; color: var(--color-merah);  animation: nf-twinkle 6s   ease-in-out infinite 1.4s; }
+  .nf-star-4 { bottom: 10%; right: 8%; font-size: 26px;                           animation: nf-twinkle 4.8s ease-in-out infinite 0.4s; }
+  .nf-star-5 { bottom: 5%; left: 30%;  font-size: 14px; color: var(--color-merah); animation: nf-twinkle 3.2s ease-in-out infinite 1.8s; }
+
+  .notfound-content {
+    position: relative;
+    z-index: 2;
+    animation: nf-fade-up 0.8s ease both 0.3s;
+  }
+
+  .notfound-eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-merah);
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .notfound-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--color-merah);
+  }
+
+  .notfound-desc {
+    color: var(--color-muted);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 420px;
+  }
+
+  @keyframes nf-mandala-rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes nf-twinkle {
+    0%, 100% { transform: scale(0.7) rotate(0deg);   opacity: 0.3; }
+    50%      { transform: scale(1.25) rotate(180deg); opacity: 1; }
+  }
+
+  @keyframes nf-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .notfound { padding: 80px var(--page-gutter) 40px; }
+    .notfound-stage {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 24px;
+    }
+    .notfound-desc { font-size: 16px; }
+    .nf-star-1 { font-size: 20px; }
+    .nf-star-2 { font-size: 16px; }
+    .nf-star-3 { font-size: 18px; }
+    .nf-star-4 { font-size: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .notfound-mandala,
+    .nf-star {
+      animation: none !important;
+    }
+    .nf-star { opacity: 0.5; }
+    .notfound-content { animation: none !important; opacity: 1; }
+    .notfound-tilt { transition: none !important; }
+  }
+</style>
+
+<script>
+  const stage = document.getElementById('notfound-stage');
+  const tilt = document.getElementById('notfound-tilt');
+
+  if (stage && tilt) {
+    const maxTilt = 8;
+
+    stage.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = stage.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      tilt.style.transform = `rotateY(${x * maxTilt * 2}deg) rotateX(${-y * maxTilt * 2}deg)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      tilt.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+
+    if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
+      let orientationGranted = false;
+
+      const handleOrientation = (e: DeviceOrientationEvent) => {
+        if (!orientationGranted && e.gamma === null) return;
+        orientationGranted = true;
+        const gamma = Math.max(-45, Math.min(45, e.gamma || 0));
+        const beta = Math.max(-45, Math.min(45, (e.beta || 0) - 45));
+        tilt.style.transform = `rotateY(${(gamma / 45) * maxTilt}deg) rotateX(${(-beta / 45) * maxTilt}deg)`;
+      };
+
+      window.addEventListener('deviceorientation', handleOrientation);
+    }
+  }
+</script>
